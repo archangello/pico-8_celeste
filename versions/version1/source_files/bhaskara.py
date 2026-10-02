@@ -1,15 +1,16 @@
 class QuadraticMovement:
     def __init__(self, duration: float):
-        self.a = -5
-        self.b = duration * 5
+        self.a = -20
+        self.b = duration * 20
         self.c = 0
         self.current_x = 0
         self.is_animating = False
     
     def start(self):
+        self.current_x = 0
         self.is_animating = True
     
-    def update(self, delta_time: float) -> float:
+    def update(self, delta_time: float) -> float | None:
         """Atualiza a posição da trajetória quadrática ao longo do tempo.
 
         Calcula o valor de y para a curva definida pelos coeficientes a, b e c
@@ -22,6 +23,7 @@ class QuadraticMovement:
 
         Returns:
             float: Valor de y calculado para a posição atual da animação.
+            None: Quando a animação não está acontecendo
         """
         if self.is_animating:
             y = (self.a * self.current_x**2) + (self.b * self.current_x) + self.current_x

@@ -1,5 +1,5 @@
 import pygame
-from pygame.math import lerp as larp # // isso aqui? # Sim // kkkkkkkk
+from pygame.math import lerp as larp
 
 pygame.init()
 
@@ -114,7 +114,7 @@ def algum_codigo():
     posit_bits      : int = 0
     pixel_sep       : int = 1
     pixel_sep_old   : int = 0
-    channel_red   : list = 0
+    channel_red   : int = 0
     channel_green : list = 0
     channel_blue  : list = 0
     channel       : int = 0
