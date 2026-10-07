@@ -1,0 +1,4 @@
+{
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "C_Cpp.default.compilerPath": "C:/msys64/mingw64/bin/gcc.exe"
+}

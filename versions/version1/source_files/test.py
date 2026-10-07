@@ -15,7 +15,8 @@ def rodando():
     return is_running
 w = 20
 h = 20
-y = display.height - h - 10
+y = display.height / 2 - h / 2
+actual_y = y
 x = display.width / 2 - w / 2
 def draw_square():
     pygame.draw.rect(display, (255, 255, 255), (x, y, w, h))
@@ -23,16 +24,15 @@ def draw_square():
 
 moviment = bhaskara.QuadraticMovement(duration=1.0)
 
-
+n = 1
 clock = pygame.Clock()
 while rodando():
     dt = clock.tick(60) / 1000
 
     if not moviment.is_animating:
-        y = display.height - h - 10
+        y = display.height / 2 - h / 2
         moviment.start()
-
-    y -= moviment.update(delta_time=dt) or 0
+    y = actual_y - (moviment.update(delta_time=dt) or 0) * 10
     
     display.fill((0, 0, 0))
     draw_square()

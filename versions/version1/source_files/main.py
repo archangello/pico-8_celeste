@@ -104,37 +104,37 @@ while rodando:
 
     pygame.display.flip()
 
-def algum_codigo():
-    with open('filename', 'rb') as file: # obs: Dá erro se o arquivo não existir
-        conteudo: bytes = file.read() # type: ignore
-    pixel_atual: int = 0
-    # esse vai ser o numero que vai guardar a chave correspondente ao nosso pixel
+# def algum_codigo():
+#     with open('filename', 'rb') as file: # obs: Dá erro se o arquivo não existir
+#         conteudo: bytes = file.read() # type: ignore
+#     pixel_atual: int = 0
+#     # esse vai ser o numero que vai guardar a chave correspondente ao nosso pixel
     
-    posit_byte      : int = 0
-    posit_bits      : int = 0
-    pixel_sep       : int = 1
-    pixel_sep_old   : int = 0
-    channel_red   : int = 0
-    channel_green : list = 0
-    channel_blue  : list = 0
-    channel       : int = 0
-    for posit_byte in range(pixel_sep_old * 8, len(file.read), pixel_sep * 8):
+#     posit_byte      : int = 0
+#     posit_bits      : int = 0
+#     pixel_sep       : int = 1
+#     pixel_sep_old   : int = 0
+#     channel_red   : int = 0
+#     channel_green : list = 0
+#     channel_blue  : list = 0
+#     channel       : int = 0
+#     for posit_byte in range(pixel_sep_old * 8, len(file.read), pixel_sep * 8):
         
-        byte_cur = [int(bit) for bit in range(pixel_sep_old * 8, pixel_sep * 8)]
-        match channel:
-            case 0:
-                channel_red   = byte_cur
-                channel += 1
-            case 1:
-                channel_green = byte_cur
-                channel += 1
-            case 2:
-                channel_blue  = byte_cur
-                channel = 0
-                # // lista dos bits que eu selecionei
-                # // basicamente, eu to selecionando partes de 8 bits da imagem
-                # // e ai cada uma dessas partes vai corresponder a um channel
-                # // 0 nesse match e o vermelho, 1 o verde, 2 o azul
-                # // quando chegar em 2 volta ao 0 e eu continuo o for para comtinuar para o proximo pixel
+#         byte_cur = [int(bit) for bit in range(pixel_sep_old * 8, pixel_sep * 8)]
+#         match channel:
+#             case 0:
+#                 channel_red   = byte_cur
+#                 channel += 1
+#             case 1:
+#                 channel_green = byte_cur
+#                 channel += 1
+#             case 2:
+#                 channel_blue  = byte_cur
+#                 channel = 0
+#                 # // lista dos bits que eu selecionei
+#                 # // basicamente, eu to selecionando partes de 8 bits da imagem
+#                 # // e ai cada uma dessas partes vai corresponder a um channel
+#                 # // 0 nesse match e o vermelho, 1 o verde, 2 o azul
+#                 # // quando chegar em 2 volta ao 0 e eu continuo o for para comtinuar para o proximo pixel
         
-    pixel_channel: list = [channel_red, channel_green, channel_blue]
+#     pixel_channel: list = [channel_red, channel_green, channel_blue]
